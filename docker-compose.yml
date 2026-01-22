@@ -1,0 +1,15 @@
+services:
+  db:
+    image: postgres:16
+    container_name: docengine-db
+    environment:
+      POSTGRES_DB: docengine
+      POSTGRES_USER: docengine
+      POSTGRES_PASSWORD: docengine
+    ports:
+      - "5432:5432"
+    volumes:
+      - docengine_pgdata:/var/lib/postgresql/data
+
+volumes:
+  docengine_pgdata:
